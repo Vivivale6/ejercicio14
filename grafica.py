@@ -1,12 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-x = np.linspace(0,(np.pi)/2)
-seno=[]
-for i in x:
-    seno.append(np.sin(i))
-    
+datos=np.loadtxt("fecha_manchas.dat")
 
+annos= datos[:,0]
+manchas=datos[:,1]
 
-plt.plot(x,seno)
-plt.savefig("grafica.png")
+plt.figure()
+plt.plot(annos, manchas)
+plt.savefig("fecha_manchas.pdf")
